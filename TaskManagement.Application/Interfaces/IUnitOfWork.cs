@@ -1,4 +1,4 @@
-﻿using TaskManagement.Application.Interfaces.Repositories;
+using TaskManagement.Application.Interfaces.Repositories;
 using TaskManagement.Domain.Entities;
 
 namespace TaskManagement.Application.Interfaces;
@@ -13,5 +13,5 @@ public interface IUnitOfWork : IDisposable
     IGenericRepository<Label> Labels { get; }
     IGenericRepository<TaskLabel> TaskLabels { get; }
 
-    Task<int> SaveChangesAsync();
+    System.Threading.Tasks.Task<int> SaveChangesAsync();
 }
