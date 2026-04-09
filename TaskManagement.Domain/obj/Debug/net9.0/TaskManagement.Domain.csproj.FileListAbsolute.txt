@@ -1,0 +1,12 @@
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Domain\bin\Debug\net9.0\TaskManagement.Domain.deps.json
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Domain\bin\Debug\net9.0\TaskManagement.Domain.dll
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Domain\bin\Debug\net9.0\TaskManagement.Domain.pdb
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Domain\obj\Debug\net9.0\TaskManagement.Domain.csproj.AssemblyReference.cache
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Domain\obj\Debug\net9.0\TaskManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Domain\obj\Debug\net9.0\TaskManagement.Domain.AssemblyInfoInputs.cache
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Domain\obj\Debug\net9.0\TaskManagement.Domain.AssemblyInfo.cs
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Domain\obj\Debug\net9.0\TaskManagement.Domain.csproj.CoreCompileInputs.cache
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Domain\obj\Debug\net9.0\TaskManagement.Domain.dll
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Domain\obj\Debug\net9.0\refint\TaskManagement.Domain.dll
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Domain\obj\Debug\net9.0\TaskManagement.Domain.pdb
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Domain\obj\Debug\net9.0\ref\TaskManagement.Domain.dll

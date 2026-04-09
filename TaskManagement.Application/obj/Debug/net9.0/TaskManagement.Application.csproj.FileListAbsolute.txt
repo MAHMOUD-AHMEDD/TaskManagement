@@ -1,0 +1,15 @@
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\bin\Debug\net9.0\TaskManagement.Application.deps.json
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\bin\Debug\net9.0\TaskManagement.Application.dll
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\bin\Debug\net9.0\TaskManagement.Application.pdb
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\bin\Debug\net9.0\TaskManagement.Domain.dll
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\bin\Debug\net9.0\TaskManagement.Domain.pdb
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\obj\Debug\net9.0\TaskManagement.Application.csproj.AssemblyReference.cache
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\obj\Debug\net9.0\TaskManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\obj\Debug\net9.0\TaskManagement.Application.AssemblyInfoInputs.cache
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\obj\Debug\net9.0\TaskManagement.Application.AssemblyInfo.cs
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\obj\Debug\net9.0\TaskManagement.Application.csproj.CoreCompileInputs.cache
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\obj\Debug\net9.0\TaskMana.B5C26166.Up2Date
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\obj\Debug\net9.0\TaskManagement.Application.dll
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\obj\Debug\net9.0\refint\TaskManagement.Application.dll
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\obj\Debug\net9.0\TaskManagement.Application.pdb
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\obj\Debug\net9.0\ref\TaskManagement.Application.dll

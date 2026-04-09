@@ -1,0 +1,5 @@
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\obj\Debug\net9.0\TaskManagement.Infrastructure.csproj.AssemblyReference.cache
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\obj\Debug\net9.0\TaskManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\obj\Debug\net9.0\TaskManagement.Infrastructure.AssemblyInfoInputs.cache
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\obj\Debug\net9.0\TaskManagement.Infrastructure.AssemblyInfo.cs
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\obj\Debug\net9.0\TaskManagement.Infrastructure.csproj.CoreCompileInputs.cache
