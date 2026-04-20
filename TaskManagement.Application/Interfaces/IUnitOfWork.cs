@@ -13,5 +13,5 @@ public interface IUnitOfWork : IDisposable
     IGenericRepository<Label> Labels { get; }
     IGenericRepository<TaskLabel> TaskLabels { get; }
 
-    Task<int> SaveChangesAsync();
+    System.Threading.Tasks.Task<int> SaveChangesAsync();
 }
