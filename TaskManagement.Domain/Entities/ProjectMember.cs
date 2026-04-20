@@ -1,4 +1,4 @@
-﻿using TaskManagement.Domain.Enums;
+using TaskManagement.Domain.Enums;
 
 namespace TaskManagement.Domain.Entities
 {
@@ -9,7 +9,7 @@ namespace TaskManagement.Domain.Entities
         public ProjectMemberRole Role { get; set; }
         public DateTime JoinedAt { get; set; } = DateTime.UtcNow;
 
-        public User User { get; set; } = null!;
-        public Project Project { get; set; } = null!;
+        public User User { get; set; }
+        public Project Project { get; set; }
     }
 }

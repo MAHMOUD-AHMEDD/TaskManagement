@@ -1,4 +1,4 @@
-﻿namespace TaskManagement.Domain.Entities
+namespace TaskManagement.Domain.Entities
 {
     public class TaskLabel
     {

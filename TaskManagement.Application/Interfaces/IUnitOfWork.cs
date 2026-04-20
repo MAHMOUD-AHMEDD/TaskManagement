@@ -1,4 +1,4 @@
-﻿using TaskManagement.Application.Interfaces.Repositories;
+using TaskManagement.Application.Interfaces.Repositories;
 using TaskManagement.Domain.Entities;
 
 namespace TaskManagement.Application.Interfaces;

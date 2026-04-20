@@ -1,4 +1,4 @@
-﻿using TaskManagement.Domain.Common;
+using TaskManagement.Domain.Common;
 
 namespace TaskManagement.Domain.Entities
 {
@@ -9,6 +9,5 @@ namespace TaskManagement.Domain.Entities
         public int ProjectId { get; set; }
         public Project Project { get; set; } = null!;
         public ICollection<TaskLabel> TaskLabels { get; set; } = new List<TaskLabel>();
-
     }
 }

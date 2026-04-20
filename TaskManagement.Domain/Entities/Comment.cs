@@ -1,4 +1,4 @@
-﻿using TaskManagement.Domain.Common;
+using TaskManagement.Domain.Common;
 
 namespace TaskManagement.Domain.Entities
 {
@@ -9,6 +9,5 @@ namespace TaskManagement.Domain.Entities
         public int TaskId { get; set; }
         public User User { get; set; } = null!;
         public Task Task { get; set; } = null!;
-
     }
 }
