@@ -3,3 +3,16 @@ D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\obj
 D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\obj\Debug\net9.0\TaskManagement.Infrastructure.AssemblyInfoInputs.cache
 D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\obj\Debug\net9.0\TaskManagement.Infrastructure.AssemblyInfo.cs
 D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\obj\Debug\net9.0\TaskManagement.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\obj\Debug\net9.0\TaskManagement.Infrastructure.sourcelink.json
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\bin\Debug\net9.0\TaskManagement.Infrastructure.deps.json
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\bin\Debug\net9.0\TaskManagement.Infrastructure.dll
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\bin\Debug\net9.0\TaskManagement.Infrastructure.pdb
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\bin\Debug\net9.0\TaskManagement.Application.dll
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\bin\Debug\net9.0\TaskManagement.Domain.dll
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\bin\Debug\net9.0\TaskManagement.Domain.pdb
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\bin\Debug\net9.0\TaskManagement.Application.pdb
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\obj\Debug\net9.0\TaskMana.BCA0E1A6.Up2Date
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\obj\Debug\net9.0\TaskManagement.Infrastructure.dll
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\obj\Debug\net9.0\refint\TaskManagement.Infrastructure.dll
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\obj\Debug\net9.0\TaskManagement.Infrastructure.pdb
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Infrastructure\obj\Debug\net9.0\ref\TaskManagement.Infrastructure.dll

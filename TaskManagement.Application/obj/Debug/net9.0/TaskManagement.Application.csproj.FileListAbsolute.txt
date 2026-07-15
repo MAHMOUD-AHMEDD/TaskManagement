@@ -13,3 +13,4 @@ D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\obj\De
 D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\obj\Debug\net9.0\refint\TaskManagement.Application.dll
 D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\obj\Debug\net9.0\TaskManagement.Application.pdb
 D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\obj\Debug\net9.0\ref\TaskManagement.Application.dll
+D:\Courses\.NET\Projects\TaskMagmement_Project\TaskManagement.Application\obj\Debug\net9.0\TaskManagement.Application.sourcelink.json

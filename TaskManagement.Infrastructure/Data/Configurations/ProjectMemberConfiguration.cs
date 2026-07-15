@@ -12,7 +12,7 @@ namespace TaskManagement.Infrastructure.Data.Configurations
             builder.Property(PM => PM.Role).HasConversion<string>();
 
             builder.HasOne(p => p.User)
-                .WithMany(u => u.PrjoectMemberships)
+                .WithMany(u => u.ProjectMemberships)
                 .HasForeignKey(p => p.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
             builder.HasOne(pm => pm.Project)

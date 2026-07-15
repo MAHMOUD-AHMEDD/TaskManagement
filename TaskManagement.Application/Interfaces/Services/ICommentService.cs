@@ -7,8 +7,8 @@ namespace TaskManagement.Application.Interfaces.Services
     {
 
         Task<ICollection<Comment>> GetCommentsAsync();
-        Task GetCommentByIdAsync(int id);
-        Task CreateCommentAsync(int userId, int TaskId, string content);
+        Task<Comment?> GetCommentByIdAsync(int id);
+        Task CreateCommentAsync(string userId, int TaskId, string content);
         Task UpdateCommentAsync(int id, string content);
         Task DeleteCommentAsync(int id);
 
