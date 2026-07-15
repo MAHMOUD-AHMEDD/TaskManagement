@@ -6,6 +6,22 @@ obj/
 *.user
 *.suo
 .vs/
-
+.vscode/
+*.swp
 ## Secrets - do not commit
 appsettings.Development.json
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+
+## NuGet
+*.nupkg
+**/packages/*
+!**/packages/build/
+
+## OS files
+.DS_Store
+Thumbs.db
