@@ -107,6 +107,13 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<GlobalExceptionFilter>();
+    options.Filters.Add<LoggingActionFilter>();
+});
+
 var app = builder.Build();
 
 // Diagnostic Middleware to print the raw stack trace
