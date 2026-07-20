@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 using TaskManagement.Application.Interfaces.Repositories;
 using TaskManagement.Infrastructure.Data;
 
@@ -35,6 +36,16 @@ namespace TaskManagement.Infrastructure.Repositories
         public async Task<TEntity?> GetByIdAsync(int id)
         {
             return await _dbSet.FindAsync(id);
+        }
+
+        public async Task<TEntity?> FindAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            return await _dbSet.FirstOrDefaultAsync(predicate);
+        }
+
+        public async Task<IEnumerable<TEntity>> FindAllAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            return await _dbSet.Where(predicate).ToListAsync();
         }
 
         public void Update(TEntity entity)

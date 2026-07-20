@@ -1,17 +1,12 @@
-﻿using TaskManagement.Domain.Entities;
-using Task = System.Threading.Tasks.Task;
+﻿using TaskManagement.Application.DTOs.Comment;
 
-namespace TaskManagement.Application.Interfaces.Services
+namespace TaskManagement.Application.Interfaces.Services;
+
+public interface ICommentService
 {
-    public interface ICommentService
-    {
-
-        Task<ICollection<Comment>> GetCommentsAsync();
-        Task<Comment?> GetCommentByIdAsync(int id);
-        Task CreateCommentAsync(string userId, int TaskId, string content);
-        Task UpdateCommentAsync(int id, string content);
-        Task DeleteCommentAsync(int id);
-
-
-    }
+    Task<IEnumerable<CommentDto>> GetCommentsAsync(int taskId);
+    Task<CommentDto?> GetCommentByIdAsync(int id);
+    Task<CommentDto> CreateCommentAsync(CreateCommentDto dto, string userId);
+    Task UpdateCommentAsync(int id, UpdateCommentDto dto);
+    Task DeleteCommentAsync(int id);
 }

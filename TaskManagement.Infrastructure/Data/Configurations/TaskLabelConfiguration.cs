@@ -13,12 +13,12 @@ namespace TaskManagement.Infrastructure.Data.Configurations
             builder.HasOne(tl => tl.Task)
                 .WithMany(t => t.TaskLabels)
                 .HasForeignKey(tl => tl.TaskId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Cascade); // Keep cascade delete when a Task is deleted
 
             builder.HasOne(tl => tl.Label)
                 .WithMany(l => l.TaskLabels)
                 .HasForeignKey(tl => tl.LabelId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict); // Break the cycle here
         }
     }
 }

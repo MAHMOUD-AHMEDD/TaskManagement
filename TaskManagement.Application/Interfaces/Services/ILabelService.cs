@@ -1,14 +1,12 @@
-﻿using TaskManagement.Domain.Entities;
-using Task = System.Threading.Tasks.Task;
+﻿using TaskManagement.Application.DTOs.Label;
 
-namespace TaskManagement.Application.Interfaces.Services
+namespace TaskManagement.Application.Interfaces.Services;
+
+public interface ILabelService
 {
-    public interface ILabelService
-    {
-        Task<ICollection<Label>>GetLabelsAsync();
-        Task GetLabelByIdAsync(int id);
-        Task UpdateLabelAsync(int LabelId, int ProjectId, string name, string color);
-        Task DeleteLabelAsync(int LabelId);
-        Task CreateLabelAsync(int ProjectId, string name, string color);
-    }
+    Task<IEnumerable<LabelDto>> GetLabelsAsync(int projectId);
+    Task<LabelDto?> GetLabelByIdAsync(int id);
+    Task<LabelDto> CreateLabelAsync(CreateLabelDto dto);
+    Task UpdateLabelAsync(int id, UpdateLabelDto dto);
+    Task DeleteLabelAsync(int id);
 }

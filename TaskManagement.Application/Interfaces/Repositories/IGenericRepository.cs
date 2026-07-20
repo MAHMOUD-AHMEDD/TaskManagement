@@ -1,8 +1,12 @@
-﻿namespace TaskManagement.Application.Interfaces.Repositories
+﻿using System.Linq.Expressions;
+
+namespace TaskManagement.Application.Interfaces.Repositories
 {
     public interface IGenericRepository<TEntity> where TEntity : class
     {
         Task<TEntity?> GetByIdAsync(int id);
+        Task<TEntity?> FindAsync(Expression<Func<TEntity, bool>> predicate);
+        Task<IEnumerable<TEntity>> FindAllAsync(Expression<Func<TEntity, bool>> predicate);
         Task<IEnumerable<TEntity>> GetAllAsync();
         Task AddAsync(TEntity entity);
         void Update(TEntity entity);

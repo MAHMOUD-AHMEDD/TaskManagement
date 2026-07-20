@@ -1,8 +1,7 @@
-﻿namespace TaskManagement.Application.Interfaces.Services
+﻿namespace TaskManagement.Application.Interfaces.Services;
+
+public interface IAuthService
 {
-    public interface IAuthService
-    {
-        Task RegisterUserAsync(string email, string username, string password);
-        Task<string> LoginUserAsync(string username, string password);
-    }
+    Task RegisterUserAsync(string fullName, string email, string username, string password);
+    Task<string> LoginUserAsync(string usernameOrEmail, string password);
 }

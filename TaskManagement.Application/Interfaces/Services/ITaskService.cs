@@ -1,18 +1,16 @@
-﻿using TaskManagement.Domain.Enums;
+﻿using TaskManagement.Application.DTOs.Task;
 
 namespace TaskManagement.Application.Interfaces.Services
 {
     public interface ITaskService
     {
-        Task<IEnumerable<Domain.Entities.Task>> GetAllTasksAsync();
-        Task<Domain.Entities.Task> GetTaskByIdAsync(int id);
-        System.Threading.Tasks.Task CreateTaskAsync(int projectId, string title, string description);
-        System.Threading.Tasks.Task UpdateTaskAsync(int projectId, string title, string description, Domain.Enums.TaskStatus status, TaskPriority priority);
-        System.Threading.Tasks.Task DeleteTaskAsync(int id);
-        System.Threading.Tasks.Task CreateTaskLabelAsync(int taskId, int labelId);
-        System.Threading.Tasks.Task AssignTaskUser(string userId, int taskId);
-
-
-
+        Task<IEnumerable<TaskDto>> GetAllTasksAsync();
+        Task<IEnumerable<TaskDto>> GetTasksByProjectIdAsync(int projectId);
+        Task<TaskDto?> GetTaskByIdAsync(int id);
+        Task<TaskDto> CreateTaskAsync(CreateTaskDto dto);
+        Task UpdateTaskAsync(int id, UpdateTaskDto dto);
+        Task DeleteTaskAsync(int id);
+        Task AssignLabelToTaskAsync(int taskId, int labelId);
+        Task AssignTaskAsync(string userId, int taskId);
     }
 }
