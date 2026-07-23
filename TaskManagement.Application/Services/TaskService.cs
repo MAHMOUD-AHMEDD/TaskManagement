@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using TaskManagement.Application.DTOs.Common;
 using TaskManagement.Application.DTOs.Task;
 using TaskManagement.Application.Exceptions;
 using TaskManagement.Application.Interfaces;
@@ -19,16 +20,36 @@ namespace TaskManagement.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<TaskDto>> GetAllTasksAsync()
+        public async Task<PagedResult<TaskDto>> GetAllTasksAsync(PaginationParams paginationParams)
         {
-            var tasks = await _unitOfWork.Tasks.GetAllAsync();
-            return _mapper.Map<IEnumerable<TaskDto>>(tasks);
+            var (tasks, totalCount) = await _unitOfWork.Tasks.GetPagedAsync(paginationParams.PageNumber, paginationParams.PageSize);
+            var taskDtos = _mapper.Map<IEnumerable<TaskDto>>(tasks);
+
+            return new PagedResult<TaskDto>
+            {
+                Items = taskDtos,
+                TotalCount = totalCount,
+                PageNumber = paginationParams.PageNumber,
+                PageSize = paginationParams.PageSize
+            };
         }
 
-        public async Task<IEnumerable<TaskDto>> GetTasksByProjectIdAsync(int projectId)
+        public async Task<PagedResult<TaskDto>> GetTasksByProjectIdAsync(int projectId, PaginationParams paginationParams)
         {
-            var tasks = await _unitOfWork.Tasks.FindAllAsync(t => t.ProjectId == projectId);
-            return _mapper.Map<IEnumerable<TaskDto>>(tasks);
+            var (tasks, totalCount) = await _unitOfWork.Tasks.GetPagedAsync(
+                t => t.ProjectId == projectId,
+                paginationParams.PageNumber,
+                paginationParams.PageSize
+            );
+            var taskDtos = _mapper.Map<IEnumerable<TaskDto>>(tasks);
+
+            return new PagedResult<TaskDto>
+            {
+                Items = taskDtos,
+                TotalCount = totalCount,
+                PageNumber = paginationParams.PageNumber,
+                PageSize = paginationParams.PageSize
+            };
         }
 
         public async Task<TaskDto?> GetTaskByIdAsync(int id)

@@ -1,11 +1,12 @@
-﻿using TaskManagement.Application.DTOs.Task;
+﻿using TaskManagement.Application.DTOs.Common;
+using TaskManagement.Application.DTOs.Task;
 
 namespace TaskManagement.Application.Interfaces.Services
 {
     public interface ITaskService
     {
-        Task<IEnumerable<TaskDto>> GetAllTasksAsync();
-        Task<IEnumerable<TaskDto>> GetTasksByProjectIdAsync(int projectId);
+        Task<PagedResult<TaskDto>> GetAllTasksAsync(PaginationParams paginationParams);
+        Task<PagedResult<TaskDto>> GetTasksByProjectIdAsync(int projectId, PaginationParams paginationParams);
         Task<TaskDto?> GetTaskByIdAsync(int id);
         Task<TaskDto> CreateTaskAsync(CreateTaskDto dto);
         Task UpdateTaskAsync(int id, UpdateTaskDto dto);

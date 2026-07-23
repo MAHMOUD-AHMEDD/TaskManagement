@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using TaskManagement.Application.DTOs.Common;
 using TaskManagement.Application.DTOs.Project;
 using TaskManagement.Application.Exceptions;
 using TaskManagement.Application.Interfaces;
@@ -16,10 +17,18 @@ namespace TaskManagement.Application.Services
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<IEnumerable<ProjectDto>> GetAllProjectsAsync()
+        public async Task<PagedResult<ProjectDto>> GetAllProjectsAsync(PaginationParams paginationParams)
         {
-            var projects = await _unitOfWork.Projects.GetAllAsync();
-            return _mapper.Map<IEnumerable<ProjectDto>>(projects);
+            var (projects, totalCount) = await _unitOfWork.Projects.GetPagedAsync(paginationParams.PageNumber, paginationParams.PageSize);
+            var projectDtos = _mapper.Map<IEnumerable<ProjectDto>>(projects);
+
+            return new PagedResult<ProjectDto>
+            {
+                Items = projectDtos,
+                TotalCount = totalCount,
+                PageNumber = paginationParams.PageNumber,
+                PageSize = paginationParams.PageSize
+            };
         }
         public async Task<ProjectDto?> GetProjectByIdAsync(int id)
         {

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TaskManagement.Application.DTOs.Common;
 using TaskManagement.Application.DTOs.Label;
 using TaskManagement.Application.Interfaces.Services;
 
@@ -17,9 +18,9 @@ namespace TaskManagement.API.Controllers
         }
 
         [HttpGet("{projectId}")]
-        public async Task<IActionResult> GetLabels(int projectId)
+        public async Task<IActionResult> GetLabels(int projectId, [FromQuery] PaginationParams paginationParams)
         {
-            var labels = await _labelService.GetLabelsAsync(projectId);
+            var labels = await _labelService.GetLabelsAsync(projectId, paginationParams);
             return Ok(labels);
         }
 

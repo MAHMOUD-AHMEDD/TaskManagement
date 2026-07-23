@@ -52,5 +52,30 @@ namespace TaskManagement.Infrastructure.Repositories
         {
             _context.Entry(entity).State = EntityState.Modified;
         }
+        public async Task<(IEnumerable<TEntity> Items, int TotalCount)> GetPagedAsync(int pageNumber, int pageSize)
+        {
+            var totalCount = await _dbSet.CountAsync();
+
+            var items = await _dbSet
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            return (items, totalCount);
+        }
+
+        public async Task<(IEnumerable<TEntity> Items, int TotalCount)> GetPagedAsync(Expression<Func<TEntity, bool>> predicate, int pageNumber, int pageSize)
+        {
+            var query = _dbSet.Where(predicate);
+
+            var totalCount = await query.CountAsync();
+
+            var items = await query
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            return (items, totalCount);
+        }
     }
 }

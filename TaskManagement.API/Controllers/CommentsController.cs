@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TaskManagement.Application.DTOs.Comment;
+using TaskManagement.Application.DTOs.Common;
 using TaskManagement.Application.Interfaces.Services;
 
 namespace TaskManagement.API.Controllers
@@ -18,9 +19,9 @@ namespace TaskManagement.API.Controllers
         }
 
         [HttpGet("{taskId}")]
-        public async Task<IActionResult> GetComments(int taskId)
+        public async Task<IActionResult> GetComments(int taskId, [FromQuery] PaginationParams paginationParams)
         {
-            var comments = await _commentService.GetCommentsAsync(taskId);
+            var comments = await _commentService.GetCommentsAsync(taskId, paginationParams);
             return Ok(comments);
         }
 

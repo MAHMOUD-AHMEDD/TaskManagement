@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using TaskManagement.Application.DTOs.Common;
 using TaskManagement.Application.DTOs.Label;
 using TaskManagement.Application.Interfaces;
 using TaskManagement.Application.Interfaces.Services;
@@ -22,10 +23,22 @@ namespace TaskManagement.Application.Services
             return label == null ? null : _mapper.Map<LabelDto>(label);
         }
 
-        public async Task<IEnumerable<LabelDto>> GetLabelsAsync(int projectId)
+        public async Task<PagedResult<LabelDto>> GetLabelsAsync(int projectId, PaginationParams paginationParams)
         {
-            var labels = await _unitOfWork.Labels.FindAllAsync(l => l.ProjectId == projectId);
-            return _mapper.Map<IEnumerable<LabelDto>>(labels);
+            var (labels, totalCount) = await _unitOfWork.Labels.GetPagedAsync(
+                l => l.ProjectId == projectId,
+                paginationParams.PageNumber,
+                paginationParams.PageSize
+            );
+            var labelDtos = _mapper.Map<IEnumerable<LabelDto>>(labels);
+
+            return new PagedResult<LabelDto>
+            {
+                Items = labelDtos,
+                TotalCount = totalCount,
+                PageNumber = paginationParams.PageNumber,
+                PageSize = paginationParams.PageSize
+            };
         }
 
         public async Task<LabelDto> CreateLabelAsync(CreateLabelDto dto)

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using TaskManagement.Application.DTOs.Comment;
+using TaskManagement.Application.DTOs.Common;
 using TaskManagement.Application.Exceptions;
 using TaskManagement.Application.Interfaces;
 using TaskManagement.Application.Interfaces.Services;
@@ -19,10 +20,22 @@ namespace TaskManagement.Application.Services
 
         }
 
-        public async Task<IEnumerable<CommentDto>> GetCommentsAsync(int taskId)
+        public async Task<PagedResult<CommentDto>> GetCommentsAsync(int taskId, PaginationParams paginationParams)
         {
-            var comments = await _unitOfWork.Comments.FindAllAsync(c => c.TaskId == taskId);
-            return _mapper.Map<IEnumerable<CommentDto>>(comments);
+            var (comments, totalCount) = await _unitOfWork.Comments.GetPagedAsync(
+                c => c.TaskId == taskId,
+                paginationParams.PageNumber,
+                paginationParams.PageSize
+            );
+            var commentDtos = _mapper.Map<IEnumerable<CommentDto>>(comments);
+
+            return new PagedResult<CommentDto>
+            {
+                Items = commentDtos,
+                TotalCount = totalCount,
+                PageNumber = paginationParams.PageNumber,
+                PageSize = paginationParams.PageSize
+            };
         }
 
         public async Task<CommentDto?> GetCommentByIdAsync(int id)

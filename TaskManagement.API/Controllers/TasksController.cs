@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TaskManagement.Application.DTOs.Common;
 using TaskManagement.Application.DTOs.Task;
 using TaskManagement.Application.Interfaces.Services;
 
@@ -17,9 +18,9 @@ namespace TaskManagement.API.Controllers
         }
 
         [HttpGet("project/{projectId}")]
-        public async Task<IActionResult> GetTasksByProject(int projectId)
+        public async Task<IActionResult> GetTasksByProject(int projectId, [FromQuery] PaginationParams paginationParams)
         {
-            var tasks = await _taskService.GetTasksByProjectIdAsync(projectId);
+            var tasks = await _taskService.GetTasksByProjectIdAsync(projectId, paginationParams);
             return Ok(tasks);
         }
 
@@ -56,9 +57,9 @@ namespace TaskManagement.API.Controllers
         }
 
         [HttpGet("all")]
-        public async Task<IActionResult> GetAllTasks()
+        public async Task<IActionResult> GetAllTasks([FromQuery] PaginationParams paginationParams)
         {
-            var tasks = await _taskService.GetAllTasksAsync();
+            var tasks = await _taskService.GetAllTasksAsync(paginationParams);
             return Ok(tasks);
         }
 
