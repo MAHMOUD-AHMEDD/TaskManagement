@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using TaskManagement.Application.Exceptions;
 using TaskManagement.Application.Interfaces.Services;
 using TaskManagement.Application.Settings;
 using TaskManagement.Domain.Entities;
@@ -35,7 +36,7 @@ namespace TaskManagement.Application.Services
             if (!result.Succeeded)
             {
                 var errors = string.Join(", ", result.Errors.Select(e => e.Description));
-                throw new Exception($"Registration failed: {errors}");
+                throw new BadRequestException($"Registration failed: {errors}");
             }
         }
 
@@ -44,7 +45,7 @@ namespace TaskManagement.Application.Services
             var user = await _userManager.FindByNameAsync(usernameOrEmail) ?? await _userManager.FindByEmailAsync(usernameOrEmail);
             if (user == null || !await _userManager.CheckPasswordAsync(user, password))
             {
-                throw new Exception("Invalid username/email or password.");
+                throw new UnauthorizedException("Invalid username/email or password.");
             }
             return GenerateJwtToken(user);
         }

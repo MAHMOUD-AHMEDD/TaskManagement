@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using TaskManagement.Application.DTOs.Common;
 using TaskManagement.Application.DTOs.Label;
+using TaskManagement.Application.Exceptions;
 using TaskManagement.Application.Interfaces;
 using TaskManagement.Application.Interfaces.Services;
 
@@ -54,7 +55,7 @@ namespace TaskManagement.Application.Services
             var label = await _unitOfWork.Labels.GetByIdAsync(id);
             if (label == null)
             {
-                throw new KeyNotFoundException($"Label with ID {id} not found.");
+                throw new NotFoundException($"Label with ID {id} not found.");
             }
             _mapper.Map(dto, label);
             _unitOfWork.Labels.Update(label);
@@ -66,7 +67,7 @@ namespace TaskManagement.Application.Services
             var label = await _unitOfWork.Labels.GetByIdAsync(id);
             if (label == null)
             {
-                throw new KeyNotFoundException($"Label with ID {id} not found.");
+                throw new NotFoundException($"Label with ID {id} not found.");
             }
             _unitOfWork.Labels.Delete(label);
             await _unitOfWork.SaveChangesAsync();
